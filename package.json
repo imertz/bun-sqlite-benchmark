@@ -3,6 +3,6 @@
   "module": "bun-sqlite-benchmark.js",
   "type": "module",
   "scripts": {
-    "build": "bun build ./bun-sqlite-benchmark.js --compile --outfile bun-sqlite-benchmark"
+    "benchmark": "bun run bun-sqlite-benchmark.js"
   }
 }
