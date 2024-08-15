@@ -150,6 +150,7 @@ async function main() {
   console.log("\nPerformance Comparison:");
   console.log("Without Index:");
   console.log(`  Insert time: ${withoutIndexResults.insertTime.toFixed(2)} ms`);
+  console.log(`  Inserts per second: ${(NUM_RECORDS / (withoutIndexResults.insertTime / 1000)).toFixed(2)}`);
   console.log(`  Select time: ${withoutIndexResults.selectTime.toFixed(2)} ms`);
   console.log(`  Processed records: ${withoutIndexResults.processedCount.toLocaleString()}`);
   const withoutIndexSelectsPerSecond = withoutIndexResults.processedCount / (withoutIndexResults.selectTime / 1000);
@@ -157,6 +158,7 @@ async function main() {
 
   console.log("With Index:");
   console.log(`  Insert time: ${withIndexResults.insertTime.toFixed(2)} ms`);
+  console.log(`  Inserts per second: ${(NUM_RECORDS / (withIndexResults.insertTime / 1000)).toFixed(2)}`);
   console.log(`  Select time: ${withIndexResults.selectTime.toFixed(2)} ms`);
   console.log(`  Processed records: ${withIndexResults.processedCount.toLocaleString()}`);
   const withIndexSelectsPerSecond = withIndexResults.processedCount / (withIndexResults.selectTime / 1000);
